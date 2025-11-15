@@ -1,3 +1,84 @@
+// --- INÍCIO DA SEÇÃO DE STICKERS DE FUNDO ---
+
+// Lista de GIFs e imagens que você quer no fundo (sinta-se à vontade para adicionar/trocar)
+const backgroundGifs = [
+  "https://media.giphy.com/media/YU3fLgN1YUBoG1h5yS/giphy.gif", // Coração batendo
+  "https://media.giphy.com/media/TZIpL5W9yB4ZNmMskg/giphy.gif", // Corações flutuando
+  "https://media.giphy.com/media/R0zKQHIqzHRwTnyin1/giphy.gif", // Gatinhos // Animação de coração
+  "https://media.giphy.com/media/rqakfTENN28nqfZzVP/giphy.gif", // Coração pixel
+  "https://media.giphy.com/media/5ExYAtuRPRWo0tJciM/giphy.gif",
+"https://media.giphy.com/media/McZwdAPCypDiX58M0u/giphy.gif",
+"https://media.giphy.com/media/W0oSGKm2PW1Xwr3FQp/giphy.gif",
+"https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnYya2YxZnBnZjcyY2E1bTB1OTdtbnY1YWh3b3N6YXZ5N2tnMjM3diZlcD12MV9naWZzX3NlYXJjaCZjdD1n/pUeXcg80cO8I8/giphy.gif",
+"https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnYya2YxZnBnZjcyY2E1bTB1OTdtbnY1YWh3b3N6YXZ5N2tnMjM3diZlcD12MV9naWZzX3NlYXJjaCZjdD1n/VPY5rJLLDkbHcEv3XR/giphy.gif",
+"https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnYya2YxZnBnZjcyY2E1bTB1OTdtbnY1YWh3b3N6YXZ5N2tnMjM3diZlcD12MV9naWZzX3NlYXJjaCZjdD1n/a5viI92PAF89q/giphy.gif",
+ "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnYya2YxZnBnZjcyY2E1bTB1OTdtbnY1YWh3b3N6YXZ5N2tnMjM3diZlcD12MV9naWZzX3NlYXJjaCZjdD1n/o0vwzuFwCGAFO/giphy.gif",
+  "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3M3NyamN6dGRqNHV0Mmtoc3N6dG1ubDZtcndqcjRrNW1sM29sNGVqayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l3q2K5jinAlChoCLS/giphy.gif",
+ "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3em51bXV6cG83N3A0bWdvNzdweHptemJxMWhpcXpnaXg4bXB4YW10biZlcD12MV9naWZzX3NlYXJjaCZjdD1n/puOukoEvH4uAw/giphy.gif",
+  "https://media.giphy.com/media/YU3fLgN1YUBoG1h5yS/giphy.gif", // Coração batendo
+  "https://media.giphy.com/media/TZIpL5W9yB4ZNmMskg/giphy.gif", // Corações flutuando
+  "https://media.giphy.com/media/R0zKQHIqzHRwTnyin1/giphy.gif", // Gatinhos // Animação de coração
+  "https://media.giphy.com/media/rqakfTENN28nqfZzVP/giphy.gif", // Coração pixel
+  "https://media.giphy.com/media/5ExYAtuRPRWo0tJciM/giphy.gif",
+"https://media.giphy.com/media/McZwdAPCypDiX58M0u/giphy.gif",
+"https://media.giphy.com/media/W0oSGKm2PW1Xwr3FQp/giphy.gif",
+"https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnYya2YxZnBnZjcyY2E1bTB1OTdtbnY1YWh3b3N6YXZ5N2tnMjM3diZlcD12MV9naWZzX3NlYXJjaCZjdD1n/pUeXcg80cO8I8/giphy.gif",
+"https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnYya2YxZnBnZjcyY2E1bTB1OTdtbnY1YWh3b3N6YXZ5N2tnMjM3diZlcD12MV9naWZzX3NlYXJjaCZjdD1n/VPY5rJLLDkbHcEv3XR/giphy.gif",
+"https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnYya2YxZnBnZjcyY2E1bTB1OTdtbnY1YWh3b3N6YXZ5N2tnMjM3diZlcD12MV9naWZzX3NlYXJjaCZjdD1n/a5viI92PAF89q/giphy.gif",
+ "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnYya2YxZnBnZjcyY2E1bTB1OTdtbnY1YWh3b3N6YXZ5N2tnMjM3diZlcD12MV9naWZzX3NlYXJjaCZjdD1n/o0vwzuFwCGAFO/giphy.gif",
+  "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3M3NyamN6dGRqNHV0Mmtoc3N6dG1ubDZtcndqcjRrNW1sM29sNGVqayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l3q2K5jinAlChoCLS/giphy.gif",
+ "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3em51bXV6cG83N3A0bWdvNzdweHptemJxMWhpcXpnaXg4bXB4YW10biZlcD12MV9naWZzX3NlYXJjaCZjdD1n/puOukoEvH4uAw/giphy.gif"// Luv U
+];
+
+// Função-helper para pegar um número aleatório num intervalo
+function getRandom(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+// Função que cria UM sticker aleatório e o coloca na tela
+// Função que cria UM sticker aleatório e o coloca na tela
+function createRandomSticker() {
+  const sticker = document.createElement('div');
+  sticker.className = 'background-sticker';
+  
+  // 1. Escolhe uma imagem aleatória da lista
+  const randomImg = backgroundGifs[Math.floor(Math.random() * backgroundGifs.length)];
+  sticker.style.backgroundImage = `url(${randomImg})`;
+  
+  // 2. Define posição aleatória (em vh/vw, % da tela)
+  sticker.style.top = `${getRandom(-10, 90)}vh`;
+  sticker.style.left = `${getRandom(-10, 90)}vw`;
+  
+  // 3. Define tamanho aleatório
+  const size = getRandom(100, 200);
+  sticker.style.width = `${size}px`;
+  sticker.style.height = `${size}px`;
+  
+  // 4. Define opacidade aleatória
+  sticker.style.opacity = 1;
+  
+  // 5. Define rotação inicial aleatória (armazenada em variável CSS)
+  const initialRotation = getRandom(-20, 20);
+  sticker.style.setProperty('--sticker-rotate', `${initialRotation}deg`); // <--- NOVIDADE
+  
+  // 6. Define valores de flutuação aleatórios (armazenados em variáveis CSS)
+  const floatX = getRandom(-30, 30); // Move entre -30px e 30px no eixo X
+  const floatY = getRandom(-30, 30); // Move entre -30px e 30px no eixo Y
+  sticker.style.setProperty('--float-x', `${floatX}px`); // <--- NOVIDADE
+  sticker.style.setProperty('--float-y', `${floatY}px`); // <--- NOVIDADE
+  
+  // 7. Define duração e atraso da animação de flutuação para serem aleatórios
+  sticker.style.animationDuration = `${getRandom(8, 15)}s`; // Duração da flutuação entre 8 e 15 segundos
+  sticker.style.animationDelay = `${getRandom(0, 5)}s`;     // Atraso para não começar tudo junto
+  
+  // 8. Adiciona o sticker ao corpo da página
+  document.body.appendChild(sticker);
+}
+
+
+// --- FIM DA SEÇÃO DE STICKERS DE FUNDO ---
+
+
 // Dados das perguntas com imagens/GIFs
 const questions = [
   {
@@ -167,10 +248,11 @@ if (showSuccess) {
           <h1 class="success-title">Você disse SIM! 💕</h1>
           <p class="success-subtitle">Parabéns pela melhor escolha da sua vida</p>
           
-                    <div class="polaroid-frame">
-            <img src="foto_casal.jpeg" class="success-image">
+            <div class="polaroid-frame">
+                        <img src="foto_casal.jpeg" alt="Foto do Casal" class="success-image">
           </div>
-                    <p class="success-footer">"E eles viveram felizes para sempre..."</p>
+          
+          <p class="success-footer">"E eles viveram felizes para sempre..."</p>
         </div>
       </div>
     `;
@@ -185,7 +267,7 @@ if (showSuccess) {
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
           </svg>
 
-          <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHEyb2h4MzR3cHZuaHpqbnBqcTJrcnN4aXg2bnF3NXl1ZW9mYTlhOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/A4K8k6CjsqlHZTVSdO/giphy.gif" alt="Pedido" class="final-gif">
+          <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHEyb2h4MzR3cHZuaHpqbnBqcTJrcnN4aXg2bnF3NXl1ZW9mYTlhOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/A4K8k6CjsqlHZTVSdO/giphy.gif" alt="Pedido" class="final-gif">
 
           <h1 class="final-title">💍 VOCÊ ACEITA NAMORAR COMIGO? 💞</h1>
           <div class="buttons-container">
@@ -207,7 +289,7 @@ if (showMission2) {
             <path d="M9.5 11.5L14 2l.5 9.5L24 12l-9.5.5L14 22l-.5-9.5L4 12l9.5-.5z"></path>
           </svg>
 
-                    <img src="https://media.giphy.com/media/HhtjGpAuaNEoqROc2g/giphy.gif" alt="Momento de decisão" class="mission-gif">
+          <img src="https://media.giphy.com/media/HhtjGpAuaNEoqROc2g/giphy.gif" alt="Momento de decisão" class="mission-gif">
 
           <h2 class="mission-title">Missão Final:</h2>
           <p class="mission-text">
@@ -253,7 +335,7 @@ if (showMission2) {
           <h2 class="loading-title">Carregando...</h2>
           <div class="loading-dots">
             <div class="dot"></div>
-            <div class="dot"></div>
+      _       <div class="dot"></div>
             <div class="dot"></div>
           </div>
         </div>
@@ -307,7 +389,6 @@ if (showMission2) {
 function handleAnswer(index) {
   selectedAnswer = index;
   
-  // --- INÍCIO DA MODIFICAÇÃO ---
   // 1. Atualiza manualmente os botões na tela (sem chamar render())
   const buttons = document.querySelectorAll('.option-button');
   buttons.forEach((btn, i) => {
@@ -319,7 +400,6 @@ function handleAnswer(index) {
   });
   
   // 2. A chamada 'render()' foi removida daqui
-  // --- FIM DA MODIFICAÇÃO ---
   
   setTimeout(() => {
     if (currentQuestion < questions.length - 1) {
@@ -372,3 +452,9 @@ function updateNoButtonPosition() {
 
 // Inicializar
 render();
+
+// --- CÓDIGO FINAL ADICIONADO PARA OS STICKERS ---
+// Cria 7 stickers aleatórios quando a página carrega
+for (let i = 0; i < 20; i++) {
+  createRandomSticker();
+}

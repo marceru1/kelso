@@ -1,382 +1,354 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: linear-gradient(135deg, #ffe5f0 0%, #fff0f7 100%);
-    min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #ffe5f0 0%, #fff0f7 100%);
+  min-height: 100vh;
 }
 
+/* #app precisa ficar na frente dos stickers */
 #app {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .container {
-    max-width: 800px;
-    width: 100%;
-    background: white;
-    border-radius: 16px;
-    padding: 40px;
-    box-shadow: 0 10px 40px -10px rgba(231, 29, 98, 0.3);
-    animation: fadeIn 0.5s ease-out;
+  max-width: 800px;
+  width: 100%;
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 40px -10px rgba(231, 29, 98, 0.3);
+  animation: fadeIn 0.5s ease-out;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
 @keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-.progress-container {
-    margin-bottom: 30px;
-}
+.progress-container { margin-bottom: 30px; }
 
 .progress-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .progress-text {
-    font-size: 14px;
-    color: #999;
+  font-size: 14px;
+  color: #999;
 }
 
 .heart-icon {
-    width: 24px;
-    height: 24px;
-    fill: #e71d62;
-    animation: pulse 2s infinite;
+  width: 24px;
+  height: 24px;
+  fill: #e71d62;
+  animation: pulse 2s infinite;
 }
 
 .progress-bar {
-    width: 100%;
-    height: 8px;
-    background: #ffe5f0;
-    border-radius: 4px;
-    overflow: hidden;
+  width: 100%;
+  height: 8px;
+  background: #ffe5f0;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #e71d62 0%, #d95a8e 100%);
-    transition: width 0.5s ease;
+  height: 100%;
+  background: linear-gradient(90deg, #e71d62 0%, #d95a8e 100%);
+  transition: width 0.5s ease;
 }
 
 .question-title {
-    font-size: 28px;
-    font-weight: bold;
-    text-align: center;
-    color: #2d2d2d;
-    margin-bottom: 30px;
-    line-height: 1.4;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: #2d2d2d;
+  margin-bottom: 30px;
+  line-height: 1.4;
 }
 
 .question-image {
-    width: 100%;
-    max-width: 400px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin: 0 auto 30px;
-    display: block;
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto 30px;
+  display: block;
 }
 
 .options-grid {
-    display: grid;
-    gap: 16px;
+  display: grid;
+  gap: 16px;
 }
 
 .option-button {
-    padding: 20px 24px;
-    font-size: 18px;
-    text-align: left;
-    border: 2px solid #ffe5f0;
-    background: white;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  padding: 20px 24px;
+  font-size: 18px;
+  text-align: left;
+  border: 2px solid #ffe5f0;
+  background: white;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .option-button:hover {
-    border-color: #e71d62;
-    transform: scale(1.02);
+  border-color: #e71d62;
+  transform: scale(1.02);
 }
 
 .option-button.selected {
-    background: linear-gradient(90deg, #e71d62 0%, #d95a8e 100%);
-    color: white;
-    border-color: #e71d62;
-    transform: scale(1.05);
-    box-shadow: 0 10px 40px -10px rgba(231, 29, 98, 0.3);
+  background: linear-gradient(90deg, #e71d62 0%, #d95a8e 100%);
+  color: white;
+  border-color: #e71d62;
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px -10px rgba(231, 29, 98, 0.3);
 }
 
 .final-message {
-    text-align: center;
-    color: #d95a8e;
-    font-weight: bold;
-    font-size: 14px;
-    margin-top: 20px;
-    animation: pulse 2s infinite;
+  text-align: center;
+  color: #d95a8e;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 20px;
+  animation: pulse 2s infinite;
 }
 
-.loading-container {
-    text-align: center;
-}
+.loading-container { text-align: center; }
 
 .loading-icon {
-    width: 96px;
-    height: 96px;
-    margin: 0 auto 30px;
-    position: relative;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 30px;
+  position: relative;
 }
 
 .loading-heart {
-    width: 96px;
-    height: 96px;
-    fill: #e71d62;
-    animation: pulse 1s infinite;
+  width: 96px;
+  height: 96px;
+  fill: #e71d62;
+  animation: pulse 1s infinite;
 }
 
 .loading-sparkles {
-    width: 48px;
-    height: 48px;
-    fill: #d95a8e;
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    animation: spin 2s linear infinite;
+  width: 48px;
+  height: 48px;
+  fill: #d95a8e;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .loading-title {
-    font-size: 36px;
-    font-weight: bold;
-    background: linear-gradient(90deg, #e71d62 0%, #d95a8e 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #e71d62 0%, #d95a8e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
 }
 
 .loading-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
 }
 
 .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #e71d62;
-    animation: bounce 1s infinite;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e71d62;
+  animation: bounce 1s infinite;
 }
 
 .dot:nth-child(2) {
-    animation-delay: 0.2s;
-    background: #d95a8e;
+  animation-delay: 0.2s;
+  background: #d95a8e;
 }
 
 .dot:nth-child(3) {
-    animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 
-.mission-container {
-    text-align: center;
-}
+.mission-container { text-align: center; }
 
 .sparkles-icon {
-    width: 64px;
-    height: 64px;
-    fill: #d95a8e;
-    margin: 0 auto 30px;
-    animation: pulse 2s infinite;
+  width: 64px;
+  height: 64px;
+  fill: #d95a8e;
+  margin: 0 auto 30px;
+  animation: pulse 2s infinite;
 }
 
 .mission-title {
-    font-size: 32px;
-    font-weight: bold;
-    color: #2d2d2d;
-    margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #2d2d2d;
+  margin-bottom: 20px;
 }
 
 .mission-text {
-    font-size: 20px;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 40px;
+  font-size: 20px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 40px;
 }
 
 .continue-button {
-    padding: 16px 48px;
-    font-size: 18px;
-    font-weight: bold;
-    background: linear-gradient(90deg, #e71d62 0%, #d95a8e 100%);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  padding: 16px 48px;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #e71d62 0%, #d95a8e 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.continue-button:hover {
-    transform: scale(1.05);
-}
+.continue-button:hover { transform: scale(1.05); }
 
 .final-container {
-    text-align: center;
-    position: relative;
+  text-align: center;
+  position: relative;
 }
 
 .final-heart {
-    width: 80px;
-    height: 80px;
-    fill: #e71d62;
-    margin: 0 auto 30px;
-    animation: pulse 2s infinite;
+  width: 80px;
+  height: 80px;
+  fill: #e71d62;
+  margin: 0 auto 30px;
+  animation: pulse 2s infinite;
 }
 
 .final-title {
-    font-size: 48px;
-    font-weight: bold;
-    background: linear-gradient(90deg, #e71d62 0%, #d95a8e 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 40px;
+  font-size: 48px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #e71d62 0%, #d95a8e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 40px;
 }
 
 .buttons-container {
-    position: relative;
-    height: 160px;
-    margin-bottom: 40px;
+  position: relative;
+  height: 160px;
+  margin-bottom: 40px;
 }
 
 .yes-button {
-    padding: 24px 64px;
-    font-size: 32px;
-    font-weight: bold;
-    background: linear-gradient(90deg, #e71d62 0%, #d95a8e 100%);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    box-shadow: 0 10px 40px -10px rgba(231, 29, 98, 0.3);
+  padding: 24px 64px;
+  font-size: 32px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #e71d62 0%, #d95a8e 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 40px -10px rgba(231, 29, 98, 0.3);
 }
 
-.yes-button:hover {
-    transform: scale(1.1);
-}
+.yes-button:hover { transform: scale(1.1); }
 
 .no-button {
-    position: absolute;
-    padding: 4px 8px;
-    font-size: 12px;
-    background: #f5f5f5;
-    color: #999;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  position: absolute;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: #f5f5f5;
+  color: #999;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.no-button:hover {
-    background: #e5e5e5;
-}
+.no-button:hover { background: #e5e5e5; }
 
-.success-container {
-    text-align: center;
-}
+.success-container { text-align: center; }
 
 .success-heart {
-    width: 96px;
-    height: 96px;
-    fill: #e71d62;
-    margin: 0 auto 30px;
-    animation: pulse 2s infinite;
+  width: 96px;
+  height: 96px;
+  fill: #e71d62;
+  margin: 0 auto 30px;
+  animation: pulse 2s infinite;
 }
 
 .success-title {
-    font-size: 40px;
-    font-weight: bold;
-    background: linear-gradient(90deg, #e71d62 0%, #d95a8e 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #e71d62 0%, #d95a8e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
 }
 
 .success-subtitle {
-    font-size: 24px;
-    color: #666;
-    margin-bottom: 40px;
+  font-size: 24px;
+  color: #666;
+  margin-bottom: 40px;
 }
 
-
+/* Estilo da imagem na moldura */
 .success-image {
   width: 100%;
   max-width: 300px;
   height: 300px;
   object-fit: cover;
   display: block;
-  margin: 0 auto;
-  border-radius: 12px;
+  margin: 0;
+  border-radius: 0;
   box-shadow: none;
 }
 
-
-.final-gif {
-  width: 100%;
-  max-width: 250px; /* Um pouco menor para não tirar o foco do título */
-  height: auto;
-  margin: 10px auto 20px; /* Centraliza e dá um respiro */
-  display: block;
-  border-radius: 12px;
-}
-
 .success-footer {
-    font-size: 20px;
-    color: #2d2d2d;
-    font-style: italic;
+  font-size: 20px;
+  color: #2d2d2d;
+  font-style: italic;
 }
 
+/* GIF da missão */
 .mission-gif {
   width: 100%;
   max-width: 300px;
@@ -387,24 +359,70 @@ body {
   box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.2);
 }
 
+/* GIF final */
+.final-gif {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  margin: 10px auto 20px;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Moldura polaroid */
 .polaroid-frame {
   background: #fff;
-  /* O padding-bottom maior cria o espaço branco inferior da polaroid */
   padding: 15px 15px 70px 15px;
   margin: 30px auto 40px;
-  display: inline-block; /* Importante para a sombra se ajustar */
+  display: inline-block;
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
   border-radius: 2px;
-
-  /* Efeito de foto "jogada" na tela */
   transform: rotate(-4deg);
   transition: transform 0.3s ease-out;
   cursor: grab;
 }
 
-/* Efeito ao passar o mouse */
 .polaroid-frame:hover {
   transform: rotate(0deg) scale(1.05);
   box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.4);
   z-index: 10;
+}
+
+/* Stickers de fundo */
+.background-sticker {
+  position: fixed;
+  z-index: 0;
+  animation: fadeIn 1.5s ease-out;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(var(--sticker-rotate));
+  }
+  50% {
+    transform: translate(var(--float-x), var(--float-y)) rotate(var(--sticker-rotate));
+  }
+  100% {
+    transform: translate(0, 0) rotate(var(--sticker-rotate));
+  }
+}
+
+/* Aplicar a animação ao sticker */
+.background-sticker {
+  position: fixed;
+  z-index: 0;
+
+  /* IMPORTANTE: adicionar duração da animação float */
+  animation: 
+    fadeIn 1.5s ease-out,
+    float 6s infinite ease-in-out;
+
+  /* estilos restantes */
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
