@@ -362,6 +362,14 @@ body {
 }
 
 
+.final-gif {
+  width: 100%;
+  max-width: 250px; /* Um pouco menor para não tirar o foco do título */
+  height: auto;
+  margin: 10px auto 20px; /* Centraliza e dá um respiro */
+  display: block;
+  border-radius: 12px;
+}
 
 .success-footer {
     font-size: 20px;
