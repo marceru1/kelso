@@ -165,12 +165,12 @@ if (showSuccess) {
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
           </svg>
           <h1 class="success-title">Você disse SIM! 💕</h1>
-          <p class="success-subtitle">Agora somos oficialmente namorados! 🎉</p>
+          <p class="success-subtitle">Parabéns pela melhor escolha da sua vida</p>
           
                     <div class="polaroid-frame">
-            <img src="https://via.placeholder.com/400x400.png?text=Nossa+Foto+Aqui" class="success-image">
+            <img src="foto_casal.jpeg" class="success-image">
           </div>
-                    <p class="success-footer">"E eles viveram felizes para sempre..." 💑</p>
+                    <p class="success-footer">"E eles viveram felizes para sempre..."</p>
         </div>
       </div>
     `;
